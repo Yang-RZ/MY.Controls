@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MY.Controls.Demo.Ava.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MY.Controls.Demo.Ava.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+    <Grid>
+        <TabControl>
+            <TabItem Header="PropertyGrid">
+                <UniformGrid Columns="2" Rows="2">
+                    <ContentControl x:Name="contentPropertyGrid" Content="{Binding VPropertyGrid}" />
+                    <ContentControl x:Name="contentPropertyGrid1" Content="{Binding VPropertyGrid1}" />
+                    <TextBlock Text="Copy above content and paste to right place" />
+                    <ContentControl x:Name="contentPropertyGrid2" Content="{Binding VPropertyGrid2}" />
+                </UniformGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+  <!--<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+</UserControl>
