@@ -6,13 +6,13 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.Reactive.Linq;
 
 #if AVALONIA
 using Avalonia;
 using Avalonia.Media;
 using Avalonia.Controls;
 using Avalonia.Layout;
-using System.Reactive.Linq;
 using MY.Controls.Ava;
 #endif
 
@@ -22,7 +22,6 @@ using MY.Controls.WPF;
 using System.Windows.Media;
 using System.Windows;
 using System.Windows.Input;
-using System.Reactive.Linq;
 #endif
 
 namespace MY.Controls

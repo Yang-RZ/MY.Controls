@@ -16,6 +16,17 @@
                     <ContentControl x:Name="contentPropertyGrid2" Content="{Binding VPropertyGrid2}" />
                 </UniformGrid>
             </TabItem>
+            <TabItem Header="LogViewer">
+                <DockPanel>
+                    <UniformGrid DockPanel.Dock="Top" Columns="4">
+                        <TextBlock Text="Log Rate (count/s)" />
+                        <TextBox Text="{Binding LogRate}" />
+                        <Button x:Name="btnStart" Content="Start" Command="{Binding StartLogCommand}" />
+                        <Button x:Name="btnStop" Content="Stop" Command="{Binding StopLogCommand}" />
+                    </UniformGrid>
+                    <ContentControl x:Name="contentLogViewer" Content="{Binding VLogViewer}" />
+                </DockPanel>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

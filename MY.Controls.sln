@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MY.PropertyGrid.Shared", "MY.PropertyGrid.Shared\MY.PropertyGrid.Shared.shproj", "{5C010A29-67FE-4C8F-979D-71662E77BC16}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MY.Controls.PropertyGrid.Shared", "MY.PropertyGrid.Shared\MY.Controls.PropertyGrid.Shared.shproj", "{5C010A29-67FE-4C8F-979D-71662E77BC16}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MY.Controls.PropertyGrid.WPF", "MY.Controls.PropertyGrid.WPF\MY.Controls.PropertyGrid.WPF.csproj", "{28844995-D52D-40AE-8340-9B64A5093721}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MY.Controls.PropertyGrid.Avalonia", "MY.Controls.PropertyGrid.Avalonia\MY.Controls.PropertyGrid.Avalonia.csproj", "{350E2FEC-28C4-4412-B8E4-49EF5BFC331D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MY.Controls.PropertyGrid.Avalonia", "MY.Controls.PropertyGrid.Avalonia\MY.Controls.PropertyGrid.Avalonia.csproj", "{350E2FEC-28C4-4412-B8E4-49EF5BFC331D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{BEA8C508-D510-4E6F-88DC-743F09BE633B}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MY.Controls.Demo.Avalonia", "MY.Controls.Demo.Avalonia\MY.Controls.Demo.Avalonia.csproj", "{05364532-CA7A-4588-85D1-8ABEAE5E321A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MY.Controls.Demo.Avalonia.Desktop", "MY.Controls.Demo.Avalonia.Desktop\MY.Controls.Demo.Avalonia.Desktop.csproj", "{3063A5EE-A1ED-49EC-966B-D8461B427354}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MY.Controls.LogViewer.Shared", "MY.Controls.LogViewer.Shared\MY.Controls.LogViewer.Shared.shproj", "{827B5219-560A-4997-9D36-BCB8999DD2DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MY.Controls.LogViewer.WPF", "MY.Controls.LogViewer.WPF\MY.Controls.LogViewer.WPF.csproj", "{FB6B1BF5-6BC7-44FF-9FF9-2241683374E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{3063A5EE-A1ED-49EC-966B-D8461B427354}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3063A5EE-A1ED-49EC-966B-D8461B427354}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3063A5EE-A1ED-49EC-966B-D8461B427354}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB6B1BF5-6BC7-44FF-9FF9-2241683374E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB6B1BF5-6BC7-44FF-9FF9-2241683374E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB6B1BF5-6BC7-44FF-9FF9-2241683374E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB6B1BF5-6BC7-44FF-9FF9-2241683374E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +67,7 @@ Global
 		MY.PropertyGrid.Shared\MY.PropertyGrid.Shared.projitems*{28844995-d52d-40ae-8340-9b64a5093721}*SharedItemsImports = 4
 		MY.PropertyGrid.Shared\MY.PropertyGrid.Shared.projitems*{350e2fec-28c4-4412-b8e4-49ef5bfc331d}*SharedItemsImports = 5
 		MY.PropertyGrid.Shared\MY.PropertyGrid.Shared.projitems*{5c010a29-67fe-4c8f-979d-71662e77bc16}*SharedItemsImports = 13
+		MY.Controls.LogViewer.Shared\MY.Controls.LogViewer.Shared.projitems*{827b5219-560a-4997-9d36-bcb8999dd2db}*SharedItemsImports = 13
+		MY.Controls.LogViewer.Shared\MY.Controls.LogViewer.Shared.projitems*{fb6b1bf5-6bc7-44ff-9ff9-2241683374e3}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
