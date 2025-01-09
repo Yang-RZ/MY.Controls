@@ -3,10 +3,112 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="using:MY.Controls.Ava"
+             xmlns:vm="using:MY.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="MY.Controls.Ava.PropertyGrid">
+             x:Class="MY.Controls.Ava.PropertyGrid"             
+             x:DataType="vm:PropertyGridHelper">
 
-    <Grid>
-        
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <LayoutTransformControl Grid.Column="0" VerticalAlignment="Center" Width="30" Height="20">
+                <LayoutTransformControl.LayoutTransform>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"></ScaleTransform>
+                </LayoutTransformControl.LayoutTransform>
+                <Expander Name="expShowPropList" VerticalAlignment="Center" IsExpanded="True" Margin="0,5,0,0">
+                    <Expander.Resources>
+                        <Thickness x:Key="ExpanderHeaderPadding">0,0,0,0</Thickness>
+                        <Thickness x:Key="ExpanderHeaderBorderThickness">0</Thickness>
+                        <Thickness x:Key="ExpanderChevronMargin">0,0,0,0</Thickness>
+                        <HorizontalAlignment x:Key="ExpanderHeaderHorizontalContentAlignment">Center</HorizontalAlignment>
+                    </Expander.Resources>
+                    <Expander.Template>
+                        <ControlTemplate>
+                            <DockPanel Margin="4,0,0,0">
+                                <ToggleButton x:Name="ExpanderHeader" HorizontalAlignment="Left"
+                                              MinHeight="{TemplateBinding MinHeight}"
+                                              CornerRadius="{TemplateBinding CornerRadius}"
+                                              IsEnabled="{TemplateBinding IsEnabled}"
+                                              ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                              IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}" />
+                            </DockPanel>
+                        </ControlTemplate>
+                    </Expander.Template>
+                </Expander>
+            </LayoutTransformControl>
+            <Path Width="12" Height="12" Grid.Column="1" Margin="1" Fill="Black" Stretch="Uniform" Data="M694.857143 475.428571q0-105.714286-75.142857-180.857143t-180.857143-75.142857-180.857143 75.142857-75.142857 180.857143 75.142857 180.857143 180.857143 75.142857 180.857143-75.142857 75.142857-180.857143zm292.571429 475.428571q0 29.714286-21.714286 51.428571t-51.428571 21.714286q-30.857143 0-51.428571-21.714286l-196-195.428571q-102.285714 70.857143-228 70.857143-81.714286 0-156.285714-31.714286t-128.571429-85.714286-85.714286-128.571429-31.714286-156.285714 31.714286-156.285714 85.714286-128.571429 128.571429-85.714286 156.285714-31.714286 156.285714 31.714286 128.571429 85.714286 85.714286 128.571429 31.714286 156.285714q0 125.714286-70.857143 228l196 196q21.142857 21.142857 21.142857 51.428571z" />
+            <TextBox x:Name="txtSearch" Grid.Column="2" Text="{Binding StringToSearch}" Height="12" VerticalContentAlignment="Center">
+            </TextBox>
+            <Button x:Name="btnCopy" Grid.Column="3" Margin="1" Command="{Binding CopyPropertiesCommand}">
+                <Path Width="12" Height="12" Fill="Black" Stretch="Uniform" Data="M969.142857 219.428571q22.857143 0 38.857143 16t16 38.857143l0 694.857143q0 22.857143-16 38.857143t-38.857143 16l-548.571429 0q-22.857143 0-38.857143-16t-16-38.857143l0-164.571429-310.857143 0q-22.857143 0-38.857143-16t-16-38.857143l0-384q0-22.857143 11.428571-50.285714t27.428571-43.428571l233.142857-233.142857q16-16 43.428571-27.428571t50.285714-11.428571l237.714286 0q22.857143 0 38.857143 16t16 38.857143l0 187.428571q38.857143-22.857143 73.142857-22.857143l237.714286 0zm-310.857143 121.714286l-170.857143 170.857143 170.857143 0 0-170.857143zm-365.714286-219.428571l-170.857143 170.857143 170.857143 0 0-170.857143zm112 369.714286l180.571429-180.571429 0-237.714286-219.428571 0 0 237.714286q0 22.857143-16 38.857143t-38.857143 16l-237.714286 0 0 365.714286 292.571429 0 0-146.285714q0-22.857143 11.428571-50.285714t27.428571-43.428571zm546.285714 459.428571l0-658.285714-219.428571 0 0 237.714286q0 22.857143-16 38.857143t-38.857143 16l-237.714286 0 0 365.714286 512 0z" />
+            </Button>
+            <Button x:Name="btnPaste" Grid.Column="4" Margin="1" Command="{Binding PastePropertiesCommand}">
+                <Path Width="12" Height="12" Fill="Black" Stretch="Uniform" Data="M438.857143 950.857143l512 0 0-365.714286-237.714286 0q-22.857143 0-38.857143-16t-16-38.857143l0-237.714286-219.428571 0 0 658.285714zm146.285714-822.857143l0-36.571429q0-7.428571-5.428571-12.857143t-12.857143-5.428571l-402.285714 0q-7.428571 0-12.857143 5.428571t-5.428571 12.857143l0 36.571429q0 7.428571 5.428571 12.857143t12.857143 5.428571l402.285714 0q7.428571 0 12.857143-5.428571t5.428571-12.857143zm146.285714 384l170.857143 0-170.857143-170.857143 0 170.857143zm292.571429 73.142857l0 384q0 22.857143-16 38.857143t-38.857143 16l-548.571429 0q-22.857143 0-38.857143-16t-16-38.857143l0-91.428571-310.857143 0q-22.857143 0-38.857143-16t-16-38.857143l0-768q0-22.857143 16-38.857143t38.857143-16l621.714286 0q22.857143 0 38.857143 16t16 38.857143l0 187.428571q12 7.428571 20.571429 16l233.142857 233.142857q16 16 27.428571 43.428571t11.428571 50.285714z" />
+            </Button>
+        </Grid>
+
+        <ListBox x:Name="lstProperties" Grid.Row="1" Margin="1" KeyDown="ListBox_KeyDown"
+                  ItemsSource="{Binding Properties}" Background="Transparent"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  IsVisible="{Binding #expShowPropList.IsExpanded}"
+                 Grid.IsSharedSizeScope="True"
+                  >
+            <ListBox.Styles>
+                <Style Selector="ListBox ListBoxItem:selected /template/ ContentPresenter">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+                <Style Selector="ListBox ListBoxItem:pointerover /template/ ContentPresenter">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+                <Style Selector="ListBox ListBoxItem:focus-within">
+                    <Setter Property="IsSelected" Value="True"/>
+                </Style>
+                <Style Selector="ListBox ListBoxItem[IsKeyboardFocusWithin=True]">
+                    <Setter Property="IsSelected" Value="True"/>
+                </Style>
+                <Style Selector="ListBox ListBoxItem">
+                    <Setter Property="IsTabStop" Value="False" />
+                </Style>
+            </ListBox.Styles>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="PropDesc"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition SharedSizeGroup="PropValue"/>
+                        </Grid.ColumnDefinitions>
+                        <ContentControl Content="{Binding DescriptionTB}" Grid.Column="0" VerticalAlignment="Center" Background="{Binding HighlightColor}"/>
+                        <Grid Grid.Column="2" HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ContentControl x:Name="editorControl" Grid.Column="0"
+                                        Content="{Binding View}" />
+                            <TextBlock IsHitTestVisible="False" IsVisible="{Binding ErrorOccurred}"
+                                       Classes.ErrorOccurred="{Binding ErrorOccurred}"
+                                       Grid.Column="0" Text="{Binding ErrorInfo}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="3,0,3,0" Foreground="DarkGray">
+                            </TextBlock>
+                            <Ellipse Grid.Column="1" Width="5" Height="5" Margin="2,0,0,0" Fill="Red"
+                                     IsVisible="{Binding ErrorOccurred}" />
+                            <!--<TextBox Text="{Binding ErrorInfo}" Grid.Column="1" Background="Red" Visibility="{Binding ErrorOccured, Converter={StaticResource boolVisConv}}"/>-->
+                            <Ellipse Grid.Column="2" Width="5" Height="5" Margin="2,0,0,0" Fill="Green" IsVisible="{Binding PropChanged}" />
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

@@ -66,7 +66,7 @@ namespace MY.Controls
                 _source.WhenAnyPropertyChanged(PropName)
 
 #if AVALONIA
-                        .ObserveOn(System.Reactive.Concurrency.Scheduler.Immediate)
+                        .ObserveOn(RxApp.MainThreadScheduler)
 #endif
 
 #if WPF
@@ -87,7 +87,7 @@ namespace MY.Controls
                 cbo.SelectedItem = (Enum)propertyInfo.GetValue(_source);
                 _source.WhenAnyPropertyChanged(PropName)
 #if AVALONIA
-                        .ObserveOn(System.Reactive.Concurrency.Scheduler.Immediate)
+                        .ObserveOn(RxApp.MainThreadScheduler)
 #endif
 
 #if WPF
@@ -111,7 +111,7 @@ namespace MY.Controls
                 chk.IsChecked = (bool)propertyInfo.GetValue(_source);
                 _source.WhenAnyPropertyChanged(PropName)
 #if AVALONIA
-                        .ObserveOn(System.Reactive.Concurrency.Scheduler.Immediate)
+                        .ObserveOn(RxApp.MainThreadScheduler)
 #endif
 
 #if WPF
@@ -137,7 +137,7 @@ namespace MY.Controls
                 //binding.UpdateSourceTrigger = System.Windows.Data.UpdateSourceTrigger.PropertyChanged;
                 _source.WhenAnyPropertyChanged(PropName)
 #if AVALONIA
-                        .ObserveOn(System.Reactive.Concurrency.Scheduler.Immediate)
+                        .ObserveOn(RxApp.MainThreadScheduler)
 #endif
 
 #if WPF

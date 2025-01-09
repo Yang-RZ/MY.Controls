@@ -1,5 +1,7 @@
 ﻿using Avalonia.Controls;
 using ReactiveUI;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MY.Controls.Demo.Ava.ViewModels;
 
@@ -25,6 +27,11 @@ public class MainViewModel : ViewModelBase
         PropertiesContainer propertiesContainerCopyTo = new PropertiesContainer();
         var ph2 = new PropertyGridHelper(propertiesContainerCopyTo, "VmMainCopyTo", "Props");
         VPropertyGrid2 = ph2.GeneratePropertyGrid();
+
+        TestPropertyGridBackgroundUpdateCommand = ReactiveCommand.CreateFromTask(() => Task.Run(() =>
+        {
+            propertiesContainer.PropDouble *= 2;
+        }));
     }
 
     private UserControl? vPropertyGrid;
@@ -46,5 +53,16 @@ public class MainViewModel : ViewModelBase
     {
         get => vPropertyGrid2;
         set => this.RaiseAndSetIfChanged(ref vPropertyGrid2, value);
+    }
+
+
+    private ICommand TestPropertyGridBackgroundUpdateCommand_;
+    public ICommand TestPropertyGridBackgroundUpdateCommand
+    {
+        get => TestPropertyGridBackgroundUpdateCommand_;
+        set
+        {
+            this.RaiseAndSetIfChanged(ref TestPropertyGridBackgroundUpdateCommand_, value);
+        }
     }
 }
