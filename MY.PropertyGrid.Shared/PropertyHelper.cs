@@ -22,6 +22,7 @@ using MY.Controls.WPF;
 using System.Windows.Media;
 using System.Windows;
 using System.Windows.Input;
+using System.Reactive.Disposables;
 #endif
 
 namespace MY.Controls
@@ -49,6 +50,8 @@ namespace MY.Controls
 
         public void GenerateView()
         {
+            DescriptionTB = new TextBlock();
+            DescriptionTB.VerticalAlignment = VerticalAlignment.Center;
             //string pvname = "PropValue";
             PropertyInfo propertyInfo = _source.GetType().GetProperty(PropName);
             InitValue = propertyInfo.GetValue(_source);
@@ -301,6 +304,19 @@ namespace MY.Controls
             set
             {
                 this.RaiseAndSetIfChanged(ref _View, value);
+            }
+        }
+
+        private TextBlock _DescriptionTB;
+        public TextBlock DescriptionTB
+        {
+            get
+            {
+                return _DescriptionTB;
+            }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _DescriptionTB, value);
             }
         }
 

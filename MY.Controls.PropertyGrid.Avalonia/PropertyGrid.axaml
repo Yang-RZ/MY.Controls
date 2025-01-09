@@ -97,12 +97,6 @@
                             </Grid.ColumnDefinitions>
                             <ContentControl x:Name="editorControl" Grid.Column="0"
                                         Content="{Binding View}" />
-                            <TextBlock IsHitTestVisible="False" IsVisible="{Binding ErrorOccurred}"
-                                       Classes.ErrorOccurred="{Binding ErrorOccurred}"
-                                       Grid.Column="0" Text="{Binding ErrorInfo}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="3,0,3,0" Foreground="DarkGray">
-                            </TextBlock>
-                            <Ellipse Grid.Column="1" Width="5" Height="5" Margin="2,0,0,0" Fill="Red"
-                                     IsVisible="{Binding ErrorOccurred}" />
                             <!--<TextBox Text="{Binding ErrorInfo}" Grid.Column="1" Background="Red" Visibility="{Binding ErrorOccured, Converter={StaticResource boolVisConv}}"/>-->
                             <Ellipse Grid.Column="2" Width="5" Height="5" Margin="2,0,0,0" Fill="Green" IsVisible="{Binding PropChanged}" />
                         </Grid>

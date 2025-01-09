@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:MY.Controls.Demo.Ava.ViewModels"
+             xmlns:vmDocking="using:MY.Controls.Docking"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MY.Controls.Demo.Ava.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -13,23 +14,19 @@
   </Design.DataContext>
 
     <Grid>
-        <!--<TabControl>
+        <TabControl>
             <TabItem Header="PropertyGrid">
                 <UniformGrid Columns="2" Rows="2">
                     <ContentControl x:Name="contentPropertyGrid" Content="{Binding VPropertyGrid}" />
                     <ContentControl x:Name="contentPropertyGrid1" Content="{Binding VPropertyGrid1}" />
-                    <TextBlock Text="Copy above content and paste to right place" />
+                    <!--<TextBlock Text="Copy above content and paste to right place" />-->
+                    <Button x:Name="btnTest" Content="Test" Command="{Binding TestPropertyGridBackgroundUpdateCommand}" />
                     <ContentControl x:Name="contentPropertyGrid2" Content="{Binding VPropertyGrid2}" />
                 </UniformGrid>
             </TabItem>
-        </TabControl>-->
-        <UniformGrid Columns="2" Rows="2">
-            <ContentControl x:Name="contentPropertyGrid" Content="{Binding VPropertyGrid}" />
-            <ContentControl x:Name="contentPropertyGrid1" Content="{Binding VPropertyGrid1}" />
-            <!--<TextBlock Text="Copy above content and paste to right place" />-->
-            <Button x:Name="btnTest" Content="Test" Command="{Binding TestPropertyGridBackgroundUpdateCommand}" />
-            <ContentControl x:Name="contentPropertyGrid2" Content="{Binding VPropertyGrid2}" />
-        </UniformGrid>
+            <TabItem Header="Docking">
+            </TabItem>
+        </TabControl>
     </Grid>
   <!--<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
 </UserControl>
