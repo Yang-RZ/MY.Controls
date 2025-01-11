@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:MY.Controls.Demo.Ava.ViewModels"
-             xmlns:vmDocking="using:MY.Controls.Docking"
+             xmlns:vmDocking="using:MY.Controls.Docking.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MY.Controls.Demo.Ava.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -25,6 +25,7 @@
                 </UniformGrid>
             </TabItem>
             <TabItem Header="Docking">
+                <vmDocking:MainView />
             </TabItem>
         </TabControl>
     </Grid>

@@ -12,7 +12,15 @@
     <DefineConstants>$(DefineConstants);AVALONIA</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <DefineConstants>$(DefineConstants);AVALONIA</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <DefineConstants>$(DefineConstants);AVALONIA</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Avalonia.ReactiveUI" />
   </ItemGroup>

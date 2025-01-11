@@ -11,5 +11,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MY.Controls.Demo.Avalonia\MY.Controls.Demo.Avalonia.csproj" />
+    <ProjectReference Include="..\MY.Controls.Docking\MY.Controls.Docking.csproj" />
   </ItemGroup>
 </Project>

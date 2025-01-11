@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MY.Controls.Docking.Views.MainView"
+        Width="1200" Height="800">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <!-- 顶部菜单 -->
+            <!--
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
+            </MenuItem>
+        </Menu>-->
+
+            <!-- 左侧面板 -->
+            <Border Name="LeftPanel" DockPanel.Dock="Left" Width="200" Background="LightGray">
+                <TextBlock Text="Solution Explorer" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+
+            <!-- 右侧面板 -->
+            <Border Name="RightPanel" DockPanel.Dock="Right" Width="200" Background="LightGray">
+                <TextBlock Text="Properties" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+
+            <!-- 底部面板 -->
+            <Border Name="BottomPanel" DockPanel.Dock="Bottom" Height="150" Background="LightGray">
+                <TextBlock Text="Output" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+
+            <!-- 主文档区域 -->
+            <Grid Name="MainContent" Background="White">
+                <TextBlock Text="Main Content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </DockPanel>
+        <Canvas Name="canvasContent" >
+
+        </Canvas>
+
+    </Grid>
+</UserControl>
